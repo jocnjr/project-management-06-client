@@ -18,7 +18,7 @@ class AddProject extends Component {
     const description = this.state.description;
     axios
       .post(
-        "http://localhost:5000/api/projects",
+        process.env.REACT_APP_API + "/projects",
         { title, description },
         { withCredentials: true }
       )

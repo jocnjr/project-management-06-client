@@ -18,7 +18,7 @@ class TaskDetails extends Component {
     const { params } = this.props.match;
     axios
       .get(
-        `http://localhost:5000/api/projects/${params.id}/tasks/${params.taskId}`
+        `${process.env.REACT_APP_API}/projects/${params.id}/tasks/${params.taskId}`
       )
       .then(responseFromApi => {
         const theTask = responseFromApi.data;

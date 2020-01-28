@@ -22,7 +22,7 @@ class EditProject extends Component {
 
     axios
       .put(
-        `http://localhost:5000/api/projects/${this.props.theProject._id}`,
+        `${process.env.REACT_APP_API}/projects/${this.props.theProject._id}`,
         {
           title,
           description

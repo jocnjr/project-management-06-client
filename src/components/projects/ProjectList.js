@@ -12,7 +12,7 @@ class ProjectList extends Component {
   }
 
   getAllProjects() {
-    axios.get(`http://localhost:5000/api/projects`).then(responseFromApi => {
+    axios.get(`${process.env.REACT_APP_API}/projects`).then(responseFromApi => {
       this.setState({
         listOfProjects: responseFromApi.data
       });
@@ -25,7 +25,7 @@ class ProjectList extends Component {
 
   deleteProject(projectID) {
     axios
-      .delete(`http://localhost:5000/api/projects/${projectID}`, {
+      .delete(`${process.env.REACT_APP_API}/projects/${projectID}`, {
         withCredentials: true
       })
       .then(() => {

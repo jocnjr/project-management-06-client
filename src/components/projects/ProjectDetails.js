@@ -21,7 +21,7 @@ class ProjectDetails extends Component {
   getSingleProject() {
     const { params } = this.props.match;
     axios
-      .get(`http://localhost:5000/api/projects/${params.id}`, {
+      .get(`${process.env.REACT_APP_API}/projects/${params.id}`, {
         withCredentials: true
       })
       .then(responseFromApi => {
@@ -66,7 +66,7 @@ class ProjectDetails extends Component {
   deleteProject() {
     const { params } = this.props.match;
     axios
-      .delete(`http://localhost:5000/api/projects/${params.id}`, {
+      .delete(`${process.env.REACT_APP_API}/projects/${params.id}`, {
         withCredentials: true
       })
       .then(() => {
