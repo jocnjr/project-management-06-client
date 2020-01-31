@@ -60,6 +60,9 @@ class Login extends Component {
           <input type="submit" value="Login" />
         </form>
         <p>
+          <a href={process.env.REACT_APP_API + "/auth/google"}>Google Login</a>
+        </p>
+        <p>
           Don't have account?
           <Link to={"/signup"}> Signup</Link>
         </p>
